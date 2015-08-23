@@ -1,7 +1,7 @@
 FROM grahamdumpleton/mod-wsgi-docker:python-3.4
 
 RUN pip install --upgrade pip \ 
-	&& pip install django \ 
+	&& pip install "django<1.8" \ 
 	&& pip install --allow-external mysql-connector-python mysql-connector-python
 
 ENV LANG=en_US.UTF-8 PYTHONHASHSEED=random \
