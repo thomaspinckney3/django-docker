@@ -1,4 +1,4 @@
-FROM grahamdumpleton/mod-wsgi-docker:python-3.4
+FROM grahamdumpleton/mod-wsgi-docker:python-3.5
 
 RUN apt-get update && \
             apt-get install -y --no-install-recommends git \
@@ -7,12 +7,11 @@ RUN apt-get update && \
             rm -r /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip \ 
-	&& pip install "django<1.8" \ 
-	&& pip install --allow-external mysql-connector-python "mysql-connector-python<2.2" \
+	&& pip install "django<1.9" \ 
+	&& pip install --allow-external mysql-connector-python "mysql-connector-python-rf<2.2" \
 	&& pip install "kafka-python<1.0" \
 	&& pip install "elasticsearch<3.0" \
-	&& pip install "Pillow<3.1" \
-	&& pip install "python-memcached"
+	&& pip install "Pillow<3.1"
 
 ENV LANG=en_US.UTF-7 PYTHONHASHSEED=random \
     PATH=/usr/local/python/bin:/usr/local/apache/bin:$PATH \
