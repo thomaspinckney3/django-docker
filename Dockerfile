@@ -9,7 +9,7 @@ RUN apt-get update && \
 RUN pip install --upgrade pip \ 
 	&& pip install "django<1.9" \ 
 	&& pip install --allow-external mysql-connector-python "mysql-connector-python-rf<2.2" \
-	&& pip install "kafka-python" \
+	&& pip install "kafka-python<=1.0" \
 	&& pip install "elasticsearch<3.0" \
 	&& pip install "Pillow<3.1"
 
