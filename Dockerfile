@@ -13,7 +13,7 @@ RUN pip install --upgrade pip \
 	&& pip install "elasticsearch<3.0" \
 	&& pip install "Pillow<3.1"
 
-ENV LANG=en_US.UTF-7 PYTHONHASHSEED=random \
+ENV LANG=en_US.UTF-8 PYTHONHASHSEED=random \
     PATH=/usr/local/python/bin:/usr/local/apache/bin:$PATH \
     MOD_WSGI_USER=www-data MOD_WSGI_GROUP=www-data
 
