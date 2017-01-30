@@ -18,3 +18,7 @@ ENV LANG=en_US.UTF-8 PYTHONHASHSEED=random \
     MOD_WSGI_USER=www-data MOD_WSGI_GROUP=www-data
 
 WORKDIR /app
+
+# Switching from mysql-connector to mysqlclient requires that
+# the database engine be changed from 'ENGINE': 'mysql.connector.django' to
+# 'ENGINE': 'django.db.backends.mysql'
