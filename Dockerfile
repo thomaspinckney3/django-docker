@@ -1,12 +1,13 @@
 FROM grahamdumpleton/mod-wsgi-docker:python-3.5
 
 RUN apt-get update && \
-            apt-get install -y --no-install-recommends git \
-            python-pip \
-            python-dev \
-            libmysqlclient-dev \
-	    unattended-upgrades && \
-            rm -r /var/lib/apt/lists/*
+	apt-get install -y --no-install-recommends \
+		git \
+		python3-pip \
+		python3-dev \
+		libmysqlclient-dev \
+		unattended-upgrades && \
+	rm -r /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip \ 
 	&& pip install "django==1.10" \ 
